@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F&V Category Command Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Quick Commerce Portfolio Project</p>
+        <h1>Fruits & Vegetables Category Command Center</h1>
+        <p class="subtitle">Simulate category manager decisions across pricing, assortment, inventory, freshness, marketing and supplier margin to evaluate growth, profitability and customer experience trade-offs.</p>
+      </div>
+      <div class="hero-card">
+        <span>Category</span>
+        <strong>Fruits & Vegetables</strong>
+        <small>Daily essentials • High frequency • High wastage risk</small>
+      </div>
+    </header>
+
+    <section class="scenario-strip">
+      <button class="preset active" data-preset="balanced">Balanced Growth</button>
+      <button class="preset" data-preset="aggressive">Aggressive Growth</button>
+      <button class="preset" data-preset="margin">Margin Protection</button>
+      <button class="preset" data-preset="cx">CX Recovery</button>
+    </section>
+
+    <main class="grid">
+      <section class="panel controls-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Decision Levers</p>
+          <h2>Change category inputs</h2>
+        </div>
+        <div id="controls"></div>
+      </section>
+
+      <section class="panel dashboard-panel">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Business Impact</p>
+            <h2>Projected category health</h2>
+          </div>
+          <div id="verdictBadge" class="badge">Recommended</div>
+        </div>
+        <div class="metric-grid" id="metrics"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Trade-off View</p>
+          <h2>Baseline vs simulated scenario</h2>
+        </div>
+        <canvas id="impactChart" height="160"></canvas>
+      </section>
+
+      <section class="panel decision-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Category Manager Lens</p>
+          <h2>Decision recommendation</h2>
+        </div>
+        <div id="recommendation"></div>
+      </section>
+
+      <section class="panel full-width">
+        <div class="section-heading">
+          <p class="eyebrow">Operating Model</p>
+          <h2>Segment-wise F&V strategy</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Segment</th>
+                <th>Role in category</th>
+                <th>Key decision</th>
+                <th>Primary KPI</th>
+                <th>Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Daily vegetables</td><td>High-frequency basket builder</td><td>Protect fill rate and price perception</td><td>Availability, conversion</td><td>Stockouts and quality complaints</td></tr>
+              <tr><td>Fruits</td><td>AOV and margin driver</td><td>Balance premium mix with freshness</td><td>AOV, gross margin</td><td>Wastage and ripeness mismatch</td></tr>
+              <tr><td>Leafy greens</td><td>Freshness credibility builder</td><td>Invest in quality checks and fast rotation</td><td>Repeat rate, freshness score</td><td>Very high spoilage</td></tr>
+              <tr><td>Exotics</td><td>Premium differentiation</td><td>Expand selectively in high-income clusters</td><td>Margin, premium mix</td><td>Low velocity and dead stock</td></tr>
+              <tr><td>Combos</td><td>Basket expansion lever</td><td>Bundle high-velocity SKUs with surplus inventory</td><td>AOV, wastage reduction</td><td>Margin leakage from over-discounting</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel full-width">
+        <div class="section-heading">
+          <p class="eyebrow">SKU Watchlist</p>
+          <h2>Top operating decisions</h2>
+        </div>
+        <div class="sku-grid">
+          <div class="sku-card"><strong>Tomato</strong><span>Volatile price item</span><p>Use dynamic pricing bands and avoid deep discounts during mandi price spikes.</p></div>
+          <div class="sku-card"><strong>Onion</strong><span>Basket essential</span><p>Prioritize 95%+ availability because stockouts hurt order conversion disproportionately.</p></div>
+          <div class="sku-card"><strong>Banana</strong><span>High repeat fruit</span><p>Improve freshness grading to protect repeat purchase and reduce refunds.</p></div>
+          <div class="sku-card"><strong>Coriander</strong><span>Low-ticket add-on</span><p>Use as a conversion nudge, but track fulfillment cost carefully.</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
